@@ -1,0 +1,59 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #E8E5E0;
+  }
+  
+  .title {
+    font-weight: bold;
+    flex-grow: 10;
+    margin: 0;
+    color: #468078;
+  }
+  
+  .register {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #468078;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .login {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #468078;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .encheresForm {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #468078;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .register:hover {
+    text-decoration: none;
+    color: red;
+  }
+
+  .login:hover {
+    text-decoration: none;
+    color: red;
+  }
+
+  .encheresForm:hover {
+    text-decoration: none;
+    color: red;
+  }
+  
