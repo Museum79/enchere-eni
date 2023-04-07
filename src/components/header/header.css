@@ -1,7 +1,8 @@
 .header-container {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     background-color: #E8E5E0;
   }
   
@@ -10,6 +11,7 @@
     flex-grow: 10;
     margin: 0;
     color: #468078;
+    text-decoration: none;
   }
   
   .register {
@@ -44,16 +46,30 @@
 
   .register:hover {
     text-decoration: none;
-    color: red;
+    color: #C68642;
   }
 
   .login:hover {
     text-decoration: none;
-    color: red;
+    color: #C68642;
   }
 
   .encheresForm:hover {
     text-decoration: none;
-    color: red;
+    color: #C68642;
   }
   
+  .deconnexion{
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #468078;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .deconnexion:hover {
+    text-decoration: none;
+    color: #C68642;
+  }

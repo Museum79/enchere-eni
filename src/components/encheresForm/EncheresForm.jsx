@@ -10,10 +10,10 @@ const EncheresForm = () => {
   const [price, setPrice] = useState(0);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [image, setImage] = useState(null);
+  //const [image, setImage] = useState(null);
 
   const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
+   // setImage(event.target.files[0]);
   };
 
   const handleSubmit = (event) => {

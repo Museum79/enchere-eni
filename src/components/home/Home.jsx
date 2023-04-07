@@ -1,15 +1,15 @@
-import React from 'react'
-import Main from '../main/Main'
-import Header from '../header/Header'
+import React from 'react';
+import Main from '../main/Main';
+import Header from '../header/Header';
 
-const Home = () => {
+const Home = ({ isAuthenticated }) => {
   return (
     <>
-    <Header/>
-    <Main/>
+      <Header isAuthenticated={isAuthenticated} />
+      <Main />
+      
     </>
   )
 }
 
-export default Home
-
+export default Home;

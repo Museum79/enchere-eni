@@ -24,6 +24,7 @@ const Main = () => {
                 <button>Rechercher</button>
             </div>
         </div>
+
   </div>
   
 

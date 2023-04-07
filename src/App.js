@@ -5,6 +5,8 @@ import Register from './components/register/Register';
 import Home from './components/home/Home';
 import EncheresForm from './components/encheresForm/EncheresForm';
 
+export const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
+
 
 function App() {
 
