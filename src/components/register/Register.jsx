@@ -100,10 +100,10 @@ function Register() {
 
           <div className="formLogin">
             <label>Mot de passe :</label>
-            <input className="mdpRegister" {...register("motDePasse", { required: true, minLength: 8,
-              pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm, })} type="password" />
+            <input className="mdpRegister" {...register("motDePasse", { required: true, minLength: 12,
+              pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{12,}$/gm, })} type="password" />
             {errors.motDePasse?.type === "required" && <span>mot de passe obligatoire</span>}
-            {errors.motDePasse?.type === "minLength" && <span>le mot de passe doit contenir au minimum 8 caractères</span>}
+            {errors.motDePasse?.type === "minLength" && <span>le mot de passe doit contenir au minimum 12 caractères</span>}
             {errors.motDePasse?.type === "pattern" && <span>Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial</span>}
           </div>
 
