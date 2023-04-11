@@ -3,14 +3,14 @@
     align-items: center;
     padding-left: 3rem;
     padding-right: 3rem;
-    background-color: #E8E5E0;
+    background-color: #233975;
   }
   
   .title {
     font-weight: bold;
     flex-grow: 10;
     margin: 0;
-    color: #468078;
+    color: #ffffff;
     text-decoration: none;
   }
   
@@ -19,7 +19,7 @@
     margin-right: 1rem;
     font-size: 18px;
     font-weight: bold;
-    color: #468078;
+    color: #ffffff;
     list-style: none;
     text-decoration: none;
   }
@@ -29,7 +29,7 @@
     margin-right: 1rem;
     font-size: 18px;
     font-weight: bold;
-    color: #468078;
+    color: #ffffff;
     list-style: none;
     text-decoration: none;
   }
@@ -39,24 +39,24 @@
     margin-right: 1rem;
     font-size: 18px;
     font-weight: bold;
-    color: #468078;
+    color: #ffffff;
     list-style: none;
     text-decoration: none;
   }
 
   .register:hover {
     text-decoration: none;
-    color: #C68642;
+    color: #ffd900;
   }
 
   .login:hover {
     text-decoration: none;
-    color: #C68642;
+    color: #ffd900;
   }
 
   .encheresForm:hover {
     text-decoration: none;
-    color: #C68642;
+    color: #ffd900;
   }
   
   .deconnexion{
@@ -64,12 +64,13 @@
     margin-right: 1rem;
     font-size: 18px;
     font-weight: bold;
-    color: #468078;
+    color: #ffffff;
     list-style: none;
     text-decoration: none;
   }
   
   .deconnexion:hover {
     text-decoration: none;
-    color: #C68642;
+    color: #ffd900;
   }
+  

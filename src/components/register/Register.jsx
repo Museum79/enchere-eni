@@ -3,6 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { AUTH_TOKEN_KEY } from "../../App";
 import { useNavigate } from "react-router-dom";
+import '../register/register.css'
 
 function Register() {
   
@@ -37,79 +38,87 @@ function Register() {
       //setFormData({});
       reset();
       };
+
+
       return (
-      <div>
-        <h1>Profil</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>
-            Pseudo:
-            <input {...register("pseudo", { required: true } ) } placeholder = "pseudo" />
+        
+      <div className="pageRegister">
+        <div className="containerRegister">
+        <div className="form-title" to="/home"><h1>Formulaire d'inscription</h1></div>
+        <form className="formRegister" onSubmit={handleSubmit(onSubmit)}>
+          
+            <div className="containerLogin">
+          <div className="formLogin">
+            <label>Pseudo:</label>
+            <input className="formLoginInput" {...register("pseudo", { required: true } ) } placeholder = "pseudo" />
             {errors.pseudo && <span>champs vide</span>}
-            </label>
-            <br />
-            <label>
-              Nom:
-            <input {...register("nom", { required: true } ) } placeholder = "Nom" />
+          </div>
+
+          <div className="formLogin">
+            <label>Nom:</label>
+            <input className="formLoginInput" {...register("nom", { required: true } ) } placeholder = "Nom" />
             {errors.nom && <span>champs vide</span>}
-            </label>
-            <br /> 
-            <label>
-              Prénom :
-            <input {...register("prenom", { required: true } ) } placeholder = "Prénom" />
-              {errors.prenom && <span>champs vide</span>}
-            </label>
-            <br />
-            <label>
-              Email:
-            <input {...register("email", { required: true, pattern: /^\S+@\S+$/i })} placeholder = "email"/>
-              {errors.email?.type === "required" && <span>champ vide</span>}
-              {errors.email?.type === "pattern" && <span>email non valide</span>}
-            </label>
-             <br />
-            <label>
-              Téléphone :
-            <input {...register("telephone", { required: true, pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}" }) } placeholder = "telephone" type = "tel" />
+          </div>
+
+          <div className="formLogin">
+            <label>Prénom :</label>
+            <input  className="formLoginInput"{...register("prenom", { required: true } ) } placeholder = "Prénom" />
+            {errors.prenom && <span>champs vide</span>}
+          </div>
+          <div className="formLogin">
+            <label>Email:</label>
+            <input className="formLoginInput" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} placeholder = "email"/>
+            {errors.email?.type === "required" && <span>champ vide</span>}
+            {errors.email?.type === "pattern" && <span>email non valide</span>}
+          </div>
+
+          <div className="formLogin">
+            <label>Téléphone :</label>
+            <input className="formLoginInput" {...register("telephone", { required: true, pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}" }) } placeholder = "telephone" type = "tel" />
             {errors.Télephone && <span>champs vide</span>}
-            {errors.Télephone?.type === "pattern" && <span>
-              cela doit etre un numero</span>} </label>
-              <br />
-              <label>
-                Rue :
-              <input {...register("adresse.rue", { required: true } ) } placeholder = "nom de rue" type = "text" />
-              {errors.rue && <span>le numéro est requis</span>}
-              </label>
-              <br />
-              <label>
-              Code Postale :
-              <input {...register("adresse.codePostal", { required: true,minLength: 5, maxLength: 5, pattern: "[0-9]{5}" } ) } placeholder = "Code Postale" />
-              {errors.codePostal && <span>le numéro est requis</span>}
-              {errors.codePostal?.type === "pattern" && <span>le code doit etre un code a 5 chiffre</span>}
-              </label>
-              <br />
-              <label>
-              Ville :
-              <input {...register("adresse.ville", { required: true } ) } placeholder = "nom de ville"/>
-              {errors.ville && <span>la ville est requise</span>} </label>
-              <label>
-                Mot de passe:
-                <input {...register("motDePasse", { required: true, minLength: 8, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm, })} type="password" />
-                {errors.motDePasse?.type === "required" && <span>mot de apsse obligatoire</span>}
-                {errors.motDePasse?.type === "minLength" && <span>le mot de passe doit contenir au minimum 8 caractère</span>}
-                {errors.motDePasse?.type === "pattern" && <span>Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial</span>}
-                </label>
-                <br />
-                <label>
-                  Confirmation:
-                  <input {...register("comfirmPassword", { required: true, validate:(value)=> value === watch("motDePasse"), })} type="password" />
-                  {errors.confirmPassword?.type === "validate" && <p>les mots de passes ne sont pas identique</p>}
-                  </label>
-                  <br />
-                  <button type="submit">Enregistrer</button>
-                  <button type="button" onClick={handleCancel}>
-                    Annule
-                    </button>
-                    </form>
-                    </div>
-                    );
-                  }
-                export default Register;
+            {errors.Télephone?.type === "pattern" && <span>cela doit être un numéro</span>} 
+          </div>
+
+          <div className="formLogin">
+            <label>Rue :</label>
+            <input className="formLoginInput" {...register("adresse.rue", { required: true } ) } placeholder = "nom de rue" />
+            {errors.rue && <span>le numéro est requis</span>}
+          </div>
+
+          <div className="formLogin">
+            <label>Code Postal :</label>
+            <input className="formLoginInput" {...register("adresse.codePostal", { required: true, minLength: 5, maxLength: 5, pattern: "[0-9]{5}" } ) } placeholder = "Code Postal" />
+            {errors.codePostal && <span>le numéro est requis</span>}
+            {errors.codePostal?.type === "pattern" && <span>le code doit être un code à 5 chiffres</span>}
+          </div>
+
+          <div className="formLogin">
+            <label>Ville :</label>
+            <input className="formLoginInput" {...register("adresse.ville", { required: true } ) } placeholder = "nom de ville"/>
+            {errors.ville && <span>la ville est requise</span>} 
+          </div>
+
+          <div className="formLogin">
+            <label>Mot de passe :</label>
+            <input className="mdpRegister" {...register("motDePasse", { required: true, minLength: 8,
+              pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm, })} type="password" />
+            {errors.motDePasse?.type === "required" && <span>mot de passe obligatoire</span>}
+            {errors.motDePasse?.type === "minLength" && <span>le mot de passe doit contenir au minimum 8 caractères</span>}
+            {errors.motDePasse?.type === "pattern" && <span>Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial</span>}
+          </div>
+
+          <div className="formLogin">
+            <label>Confirmation :</label>
+            <input className="cmdpRegister" {...register("comfirmPassword", { required: true, validate:(value)=> value === watch("motDePasse"), })}
+            type="password" />
+            {errors.confirmPassword?.type === "validate" && <p>les mots de passe ne sont pas identiques</p>}
+          </div>
+          <button className="btnRegister" type="submit">Enregistrer</button>
+          <button className="btnRegister" type="button" onClick={handleCancel}>Annuler</button>
+          </div>
+        </form>
+        </div>
+      </div>
+            );
+          }
+    export default Register;

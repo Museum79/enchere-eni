@@ -1,114 +1,202 @@
-body{
-  background-image: url(../../pictures/ordinateur-portable-maillet-table.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.titre{
-  position: absolute;
-  font-size: 2rem;
-  color: #ffffff;
-  top: 8%;
-  left: 50%;
-  transition-duration: 500ms;
-  transform: translate(-50%, -50%);
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+a {
   text-decoration: none;
-  z-index:1;
+  color: #233975;
 }
 
-.titre:hover{
-  position: absolute;
-  font-size: 2.2rem;
-  color: #ffffff;
-  top: 8%;
-  transition-duration: 500ms;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-decoration: none;
-  z-index:1;
+a:hover {
+  text-decoration: underline;
 }
 
-.bg{
-  width: 100%;
-  height: 100vh;
-  position: relative;
+.small {
+  font-size: 80%;
+  text-align: center;
+}
+
+.split-screen {
   display: flex;
+  flex-direction: column;
+}
+
+.left {
+height: 150px;  
+}
+
+.left, .right {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-self: center;
 }
 
-.containerLogin{
-width: 40vw;
-height:22vh;
-margin: 0 auto;
-margin-bottom: 0;
-padding: 50px;
-border-radius: 10px;
-background: rgba( 255, 255, 255, 0.2 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 11px );
--webkit-backdrop-filter: blur( 11px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+.left {
+  background-image: url(../../pictures/image.png);
+  background-size: cover;
+  background-position: center;
+
 }
 
-.formLogin{
-margin-bottom: 30px;
-width: 40vw;
-height: 4vh;
-text-align: center;
-border-radius: 5px;
-font-size: 18px;
+.left .copy {
+  color: white;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#btn{
-background-color: #df9534;
-color: white;
-font-weight: bolder;
-border: none;
-margin-bottom: 10px;
+.left p {
+  font-weight: 400;
 }
 
-#btn:hover{
-background-color: #ffffff;
-color: #468078;
-font-weight: bolder;
-border: none;
-margin-bottom: 10px;
+.right .copy {
+  color: black;
+  text-align: center;
+}
+
+.right .copy p {
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+}
+
+.right form {
+  width: 428px;
+}
+
+.form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #c4c4c4;
+  padding: 1em;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
 }
 
 
-.forgetMdp{
-display: block;
-flex-direction: row;
-color: white;
-text-align: left;
-font-size: small;
-margin-top: 5px;
-margin-bottom: 10px;
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
 }
 
-.forgetMdp:hover{
-display: block;
-flex-direction: row;
-color: #FF0000;
-text-align: left;
-font-size: small;
+.input-container .password {
+  position: relative;
 }
 
-.linkSignIn{
-display: block;
-flex-direction: row;
-color: white;
-text-align: left;
-font-size: small;
+.input-container .password i {
+  position: absolute;
+  top: 42px;
+  right: 16px;
 }
 
-.linkSignIn:hover{
-display: block;
-flex-direction: row;
-color: #FF0000;
-text-align: left;
-font-size: small;
+.input-container cta {
+  display: flex;
+  flex-direction: row;
 }
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input:checked~.checkmark {
+  background-color: #233975;
+  border: 1px solid #233975;
+}
+
+.checkmark {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  top: -4px;
+  left:0;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked~.checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  border: solid white;
+  border-radius: 0 3px 3px 0;
+  width: 5px;
+  height: 10px;
+  left: 8px;
+  top: 4px;
+}
+
+.signup-btn {
+  display: block;
+  width: 100%;
+  background: #233975;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.signup-btn:hover {
+  background-color: #172b64;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .split-screen {
+      flex-direction: row;
+      height: 100vh;
+  }
+  .left,
+  .right {
+      display: flex;
+      width: 50%;
+      height: auto;
+  }
+}
+
+
+
+
+
