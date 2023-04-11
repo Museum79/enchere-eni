@@ -13,7 +13,6 @@ const Login = ({ isAuthenticates }) => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   axios.interceptors.response.use(response => {
-    console.log('Response headers:', response.headers);
     return response;
   });
 
@@ -23,11 +22,8 @@ const Login = ({ isAuthenticates }) => {
     try {
       const response = await axios.post(`http://localhost:8888/authenticate`, { email, password });
       const bearerToken = response.headers?.authorization;
-      console.log(response)
-      console.log('Bearer token:', bearerToken);
       if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') { 
         const jwt = bearerToken.slice(7, bearerToken.length);
-        console.log('JWT:', jwt);
         sessionStorage.setItem(AUTH_TOKEN_KEY, jwt);
         navigate('/home', {replace: true });
       }
@@ -36,6 +32,7 @@ const Login = ({ isAuthenticates }) => {
       console.log(error);
     }
   };
+ 
 
   return (
     <>

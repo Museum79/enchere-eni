@@ -1,0 +1,74 @@
+/* Style pour le conteneur principal */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+/* Style pour la carte */
+.cardprofile {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style pour le titre */
+.cardprofile h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Style pour la liste d'informations */
+.cardprofile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style pour chaque élément de la liste */
+.cardprofile li {
+  margin-bottom: 0.5rem;
+}
+
+/* Style pour l'élément fort de la liste */
+.cardprofile li strong {
+  font-weight: bold;
+}
+
+/* Style pour le texte de la liste */
+.cardprofile li span {
+  font-size: 1.2rem;
+}
+
+/* Style pour le conteneur du bouton */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Style pour le bouton */
+.button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: darkblue;
+}

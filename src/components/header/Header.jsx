@@ -30,6 +30,8 @@ const Header = () => {
         <>
           <Link className='deconnexion' onClick={handleLogout} to="/home">Déconnexion</Link>
           <Link className='encheresForm' to="/encheresForm">Vendre un article</Link>
+          <Link className='encheresForm' to="/profile">Mon profil</Link>
+
         </>
       ) : null}
     </div>
