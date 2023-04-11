@@ -1,0 +1,74 @@
+.cardarticle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .cardarticle {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-gap: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    height: 100px;
+  }
+  .cardarticle:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cardarticle-image {
+    height: 150px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .cardarticle-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .cardarticle-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .cardarticle-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .cardarticle-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .cardarticle-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .cardarticle-price {
+    color: green;
+  }
+  
+  .cardarticle-date {
+    color: blue;
+  }
+  
+  .cardarticle-vendeur {
+    color: grey;
+  }
+  
