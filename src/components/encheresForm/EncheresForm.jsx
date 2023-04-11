@@ -24,9 +24,9 @@ const EncheresForm = () => {
   return (
     <div className="form-container">
       <h2>Nouvelle vente</h2>
-      <form onSubmit={handleSubmit}>
+      <form className='formEnchere' onSubmit={handleSubmit}>
         <div className="form-row">
-          <label htmlFor="article">Article :</label>
+          <label className='labelEncheresForm' htmlFor="article">Article :</label>
           <input
             type="text"
             id="article"
@@ -91,10 +91,10 @@ const EncheresForm = () => {
         {/* TODO afficher l'adresse */}
 
         <div className="form-row">
-          <button type="submit">Enregistrer</button>
+          <button className='btnEncheresForm' type="submit">Enregistrer</button>
         </div>
         <div className="form-row">
-          <button type="submit">Annuler</button>
+          <button className='btnEncheresForm' type="submit">Annuler</button>
         </div>
       </form>
     </div>

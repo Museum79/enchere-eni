@@ -1,0 +1,86 @@
+
+.pageRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 100px;
+  color: white;
+  background-color: #243975;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.containerRegister {
+  border-radius: 10px;
+  padding: 20px;
+
+ 
+}
+
+.form-title h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.formRegister {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.containerLogin {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.formLogin {
+  width: 48%;
+  margin-bottom: 20px;
+  margin-right: 0px;
+}
+
+.formLogin label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.formLoginInput {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(249, 249, 249, 0.963);
+}
+
+
+.formLoginInput:focus {
+  border: 2px solid #ffd900;
+  outline: none;
+}
+
+
+.btnRegister {
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 18vw;
+}
+
+.btnRegister:hover {
+  background-color: #ffd900;
+}
+
