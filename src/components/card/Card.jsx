@@ -31,7 +31,7 @@ const Card = ({article}) => {
             <img src="" alt="Article" />
           </div>
           <div className="cardarticle-content">
-            <h3 className="cardarticle-title">{article.nomArticle}</h3>
+            <h3 className="cardarticle-title"><Link to={`/displayarticle/${article.id}`}>{article.nomArticle}</Link> </h3>
             <div className="cardarticle-details">
               <p className="cardarticle-price">Prix : {actualPrice} points</p>
               <p className="cardarticle-date">Fin de l'enchère: {article.dateDebutEncheres}</p>

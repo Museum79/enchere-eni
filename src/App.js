@@ -10,6 +10,7 @@ import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import EditProfile from './components/editprofile/EditProfile';
 import { UserContext } from './components/context/Contexts';
+import DisplayArticle from './components/displayarticle/DisplayArticle';
 
 export const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 
@@ -70,6 +71,8 @@ function App() {
         <Route exact path="/profile" element={<Profile/>}/>
         <Route exact path="/profile/:id" element={<Profile/>}/>
         <Route exact path="/editprofile" element={<EditProfile/>}/>
+        <Route exact path="/displayarticle/:id" element={<DisplayArticle/>}/>
+
 
 
         {/* <Route exact path="/error" element={<Error/>}/> */}
