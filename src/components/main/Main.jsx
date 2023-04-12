@@ -4,24 +4,11 @@ import axios from 'axios'
 import Card from '../card/Card';
 import { UserContext } from '../context/Contexts';
 const Main = () => {
-    const { categories, setCategories} = useContext(UserContext);
-    const {articles,setArticles} = useContext(UserContext);
+
+    const {categories } = useContext(UserContext);
+    const {articles, setArticles} = useContext(UserContext);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
-
-
-    useEffect(()=> {
-        axios.get("http://localhost:8888/categories/all").then((response)=> {
-            setCategories(response.data)
-            console.log(response.data)
-        })
-    },[])
-    useEffect(()=> {
-        axios.get("http://localhost:8888/articles/all").then((response)=> {
-            setArticles(response.data)
-            console.log(response.data)
-        })
-    },[])
 
     const handleCategorySelect = (event) => {
         const category = event.target.value;

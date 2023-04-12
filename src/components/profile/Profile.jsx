@@ -9,6 +9,8 @@ const Profile = () => {
   const { user, setUser } = useContext(UserContext);
   const [error, setError] = useState(null);
 
+ 
+
   useEffect(() => {
     const url = id ? `http://localhost:8888/users/${id}`: `http://localhost:8888/users/userDetails`
     axios.get(url)

@@ -9,14 +9,30 @@ import Profile from './components/profile/Profile';
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import EditProfile from './components/editprofile/EditProfile';
-import DisplayArticle from './components/displayarticle/DisplayArticle';
 import { UserContext } from './components/context/Contexts';
+import DisplayArticle from './components/displayarticle/DisplayArticle';
 
 export const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 
 
 function App() {
-  const { categories, setCategories} = useContext(UserContext);
+
+  const {categories, setCategories} = useContext(UserContext);
+  const {articles, setArticles} = useContext(UserContext);
+
+
+  useEffect(()=> {
+    axios.get("http://localhost:8888/categories/all").then((response)=> {
+        setCategories(response.data)
+    })
+},[])
+
+useEffect(()=> {
+  axios.get("http://localhost:8888/articles/all").then((response)=> {
+      setArticles(response.data)
+  })
+},[])
+
 
 
   useEffect(() => {
