@@ -19,6 +19,9 @@ const Card = ({article}) => {
     const handleCloseModal = () => {
       setModalIsOpen(false);
     };
+
+
+    const actualPrice = article.enchere.montantEnchere ? article.enchere.montantEnchere : article.prixInitial
     
   return (
     <>
@@ -30,7 +33,7 @@ const Card = ({article}) => {
           <div className="cardarticle-content">
             <h3 className="cardarticle-title">{article.nomArticle}</h3>
             <div className="cardarticle-details">
-              <p className="cardarticle-price">Prix : {article.enchere.montantEnchere} points</p>
+              <p className="cardarticle-price">Prix : {actualPrice} points</p>
               <p className="cardarticle-date">Fin de l'enchère: {article.dateDebutEncheres}</p>
               <p className="cardarticle-vendeur">{isConnected ?(<Link to={`/profile/${article.vendeur.id}`}>Vendeur: {article.vendeur.pseudo}</Link>):(`Vendeur: ${article.vendeur.pseudo}`)} </p>
             </div>

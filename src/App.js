@@ -6,14 +6,25 @@ import Home from './components/home/Home';
 import EncheresForm from './components/encheresForm/EncheresForm';
 import Profile from './components/profile/Profile';
 
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import EditProfile from './components/editprofile/EditProfile';
+import { UserContext } from './components/context/Contexts';
 
 export const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 
 
 function App() {
+
+  const {categories, setCategories} = useContext(UserContext);
+
+  useEffect(()=> {
+    axios.get("http://localhost:8888/categories/all").then((response)=> {
+        setCategories(response.data)
+    })
+},[])
+
+
   useEffect(() => {
     console.log('Intercepteur ajouté');
 

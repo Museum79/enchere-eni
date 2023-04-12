@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../main/main.css'
 import axios from 'axios'
 import Card from '../card/Card';
+import { UserContext } from '../context/Contexts';
 const Main = () => {
-    const [categories,setCategories] = useState([]);
-    const [articles,setArticles] = useState([]);
+
+    const {categories } = useContext(UserContext);
+    const [articles, setArticles] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
 
-
-    useEffect(()=> {
-        axios.get("http://localhost:8888/categories/all").then((response)=> {
-            setCategories(response.data)
-        })
-    },[])
     useEffect(()=> {
         axios.get("http://localhost:8888/articles/all").then((response)=> {
             setArticles(response.data)
