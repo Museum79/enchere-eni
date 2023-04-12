@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../encheresForm/encheresForm.css';
+import { UserContext } from '../context/Contexts';
 
 
 const EncheresForm = () => {
+  const { categories} = useContext(UserContext);
+  console.log(categories)
 
   const [article, setArticle] = useState('');
   const [description, setDescription] = useState('');

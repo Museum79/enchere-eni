@@ -44,16 +44,20 @@ const Profile = () => {
           <li>
             <strong>Prénom:</strong> <span>{prenom}</span>
           </li>
+          {!id && 
+          <>
           <li>
-            <strong>Email:</strong> <span>{email}</span>
+              <strong>Email:</strong> <span>{email}</span>
           </li>
-          <li>
-            <strong>Téléphone:</strong> <span>{telephone}</span>
-          </li>
+           <li>
+              <strong>Téléphone:</strong> <span>{telephone}</span>
+          </li> </> }
+         
+
           <li>
             <strong>Adresse:</strong>{" "}
             <span>
-              {adresse.numero} {adresse.rue}, {adresse.codePostal} {adresse.ville}
+            {!id ? `${adresse.rue } ${adresse.codePostal } ${adresse.ville }`:`${adresse.codePostal } ${adresse.ville }`}
             </span>
           </li>
         </ul>

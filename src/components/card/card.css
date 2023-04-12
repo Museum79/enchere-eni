@@ -1,6 +1,7 @@
 .cardarticle-container {
   display: flex;
   margin-left: 1%;
+  flex-wrap: wrap;
 }
 
 .cardarticle {

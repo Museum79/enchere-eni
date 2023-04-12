@@ -13,6 +13,7 @@ const Main = () => {
     useEffect(()=> {
         axios.get("http://localhost:8888/categories/all").then((response)=> {
             setCategories(response.data)
+            console.log(response.data)
         })
     },[])
     useEffect(()=> {
