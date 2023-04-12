@@ -18,7 +18,6 @@ const EncheresForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
- 
   };
 
   return (

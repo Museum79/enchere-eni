@@ -1,74 +1,124 @@
 .cardarticle-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-  }
+  display: flex;
+  margin-left: 1%;
+}
+
+.cardarticle {
+  width: 300px;
+  margin-top: 20%;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(47, 83, 181, 0.32) 100%);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.334);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  transition-duration: 300ms;  
+}
+
+.cardarticle:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.334);
+  transition-duration: 300ms;
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.cardarticle-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   
-  .cardarticle {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-gap: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    height: 100px;
-  }
-  .cardarticle:hover {
-    transform: translateY(-5px);
-  }
-  
-  .cardarticle-image {
-    height: 150px;
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  
-  .cardarticle-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .cardarticle-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-  }
-  
-  .cardarticle-title {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .cardarticle-details {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  
-  .cardarticle-details p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .cardarticle-price {
-    color: green;
-  }
-  
-  .cardarticle-date {
-    color: blue;
-  }
-  
-  .cardarticle-vendeur {
-    color: grey;
-  }
-  
+}
+
+.card-body {
+  padding: 20px;
+
+}
+
+.cardarticle-title {
+  font-size: 1.8rem;
+  margin-bottom: 2px;
+}
+
+.cardarticle-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #243975;
+  margin-bottom: 10px;
+}
+
+.cardarticle-date {
+  font-size: 1rem;
+  color: #da0000;
+  margin-bottom: 20px;
+}
+
+/******** MODAL ********/
+
+.modalEnchere {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalEnchere-content {
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 80%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modalEnchere h2{
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.modalEnchere-content p {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.modalEnchere-content button {
+  background-color: #243975;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modalEnchere-Fin {
+  color: #da0000;
+}
+
+.btnModal{
+  background-color: #243975;
+  width: 40%;
+  height: 40px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-top: 5%;
+}
+
+
+
+
+

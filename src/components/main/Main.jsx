@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../main/main.css'
 import axios from 'axios'
 import Card from '../card/Card';
+import { UserContext } from '../context/Contexts';
 const Main = () => {
-    const [categories,setCategories] = useState([]);
-    const [articles,setArticles] = useState([]);
+    const { categories, setCategories} = useContext(UserContext);
+    const {articles,setArticles} = useContext(UserContext);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
 
@@ -17,6 +18,7 @@ const Main = () => {
     useEffect(()=> {
         axios.get("http://localhost:8888/articles/all").then((response)=> {
             setArticles(response.data)
+            console.log(response.data)
         })
     },[])
 
@@ -30,9 +32,8 @@ const Main = () => {
 
     <div className='container'>
         <div>
-            <h2>Liste des enchères</h2>
+            <h2 className='titreEnchere'>Liste des enchères</h2>
             </div>
-                <div className='filter-container'>
                 <div className='category-container'>
                     <label>Catégorie :</label>
                     <select className='select' onChange={handleCategorySelect}>
@@ -43,9 +44,10 @@ const Main = () => {
                     </select>
                 </div>
             <div>
+            <div className='filter-container'>
                 <label>Filtres :</label>
                 <input className='inputFiltre' type='text'></input>
-                <button>Rechercher</button>
+                <button className='btnSearch'>Rechercher</button>
             </div>
         </div>   
   </div>

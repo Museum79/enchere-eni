@@ -50,8 +50,8 @@ const Login = ({ isAuthenticates }) => {
             <form className='formLogin'>
                 <section className="copy">
                     <h2>Connexion</h2>
-                    <Link className="login-container" to="/home">
-                        <p>déjà inscrit?
+                    <Link className="login-container" to="/register">
+                        <p>Pas inscrit?
                           <strong>Inscription</strong>
                         </p>
                     </Link>
