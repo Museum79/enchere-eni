@@ -51,7 +51,7 @@ const Login = ({ isAuthenticates }) => {
                 <section className="copy">
                     <h2>Connexion</h2>
                     <Link className="login-container" to="/register">
-                        <p>déjà inscrit?
+                        <p>Pas inscrit?
                           <strong>Inscription</strong>
                         </p>
                     </Link>

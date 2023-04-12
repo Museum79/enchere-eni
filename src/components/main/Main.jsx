@@ -17,6 +17,7 @@ const Main = () => {
     useEffect(()=> {
         axios.get("http://localhost:8888/articles/all").then((response)=> {
             setArticles(response.data)
+            console.log(response.data)
         })
     },[])
 
@@ -30,9 +31,8 @@ const Main = () => {
 
     <div className='container'>
         <div>
-            <h2>Liste des enchères</h2>
+            <h2 className='titreEnchere'>Liste des enchères</h2>
             </div>
-                <div className='filter-container'>
                 <div className='category-container'>
                     <label>Catégorie :</label>
                     <select className='select' onChange={handleCategorySelect}>
@@ -43,9 +43,10 @@ const Main = () => {
                     </select>
                 </div>
             <div>
+            <div className='filter-container'>
                 <label>Filtres :</label>
                 <input className='inputFiltre' type='text'></input>
-                <button>Rechercher</button>
+                <button className='btnSearch'>Rechercher</button>
             </div>
         </div>   
   </div>

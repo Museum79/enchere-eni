@@ -24,12 +24,12 @@ function Register() {
       },
       motDePasse: data.motDePasse
     }).then(response => {
-      const bearerToken = response?.headers?.authorization;
+      /*const bearerToken = response?.headers?.authorization;
       if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
         const jwt = bearerToken.slice(7, bearerToken.length);
         sessionStorage.setItem(AUTH_TOKEN_KEY,jwt)
-      }
-      navigate('/home',{replace:true});
+      }*/
+      navigate('/login',{replace:true});
     }).catch((error) => {
       console.log(error)
     })
@@ -38,7 +38,7 @@ function Register() {
       //setFormData({});
       reset();
       };
-
+/*12avril2023Sylvain??*/
 
       return (
         
