@@ -17,7 +17,6 @@ const Main = () => {
     useEffect(()=> {
         axios.get("http://localhost:8888/articles/all").then((response)=> {
             setArticles(response.data)
-            console.log(response.data)
         })
     },[])
 
