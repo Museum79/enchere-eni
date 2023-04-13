@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 90px;
   width: 100vw;
   background-color: #f0f2f5;
   box-shadow: 0px 10px 13px -7px #0000005e, 5px 5px 15px 5px rgba(0,0,0,0);

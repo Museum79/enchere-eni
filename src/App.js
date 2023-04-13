@@ -19,6 +19,11 @@ function App() {
 
   const {categories, setCategories} = useContext(UserContext);
   const {articles, setArticles} = useContext(UserContext);
+  const {user, setUser} = useContext(UserContext);
+  const {userHeader, setUserHeader} = useContext(UserContext);
+
+
+  
 
 
   useEffect(()=> {
@@ -33,6 +38,11 @@ useEffect(()=> {
   })
 },[])
 
+useEffect(()=> {
+  axios.get("http://localhost:8888/users/userDetails").then((response)=> {
+      setUserHeader(response.data)
+  })
+},[])
 
 
   useEffect(() => {
