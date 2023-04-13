@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AUTH_TOKEN_KEY } from "../../App";
 import '../header/header.css';
-import { UserContext } from '../context/Contexts';
 
 const Header = () => {
 
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { userHedar } = useContext (UserContext);  
 
 
   useEffect(() => {

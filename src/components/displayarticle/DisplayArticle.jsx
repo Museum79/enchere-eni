@@ -9,6 +9,8 @@ const DisplayArticle = () => {
   const [user,setUser] = useState();
   const articleId = parseInt(id);
   const [bid,setBid]  = useState(false);
+  const [finEnchere,setFinEnchere]  = useState(false);
+
   const [montant,setMontant]  = useState(0);
 
 
@@ -46,6 +48,19 @@ const DisplayArticle = () => {
 
 const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.montantEnchere } points par
  ${article?.enchere.acheteur }`  : `Pas d'offre`;
+
+ const date = new Date();
+ const todaysDate = date.toISOString().slice(0, 10);
+ const dateFin = ()=> {
+ if (todaysDate >=  article.dateDebutEncheres  && todaysDate < article.dateFinEncheres){
+  return true;
+
+ }else if  (todaysDate < article.dateDebutEncheres || todaysDate > article.dateFinEncheres) {
+  return false
+ }
+ }
+ console.log(dateFin)
+
  
 
   return (
@@ -62,11 +77,11 @@ const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.mon
       
       {user &&<>
         <input type="number" id="price" value={montant} readOnly disabled={!bid }/>
-          <button type="button" onClick={() => setMontant(montant + 1)} disabled={!bid || !limitCredit}>
+          <button type="button" onClick={() => setMontant(montant + 1)} disabled={!bid || !limitCredit || !dateFin()}>
             +
           </button>
-          <button onClick={handleSubmit} disabled={!bid || !limitCredit}>Enchérir</button>
-          {!limitCredit && <p>tu peux pas faire d offre</p>}
+          <button onClick={handleSubmit} disabled={!bid || !limitCredit || !dateFin()}>Enchérir</button>
+          {!limitCredit && <p>tu n'as pas assez d'argent</p>}
       </>
       
         }
