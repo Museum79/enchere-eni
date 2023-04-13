@@ -59,20 +59,24 @@ const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.mon
   return false
  }
  }
- console.log(dateFin)
+ console.log(user?.id)
+  //console.log(article.vendeur.id)
+// console.log(article.enchere.id)
 
- 
 
   return (
     <div>
       <div>
-      <h2>{article.nomArticle}</h2>
+        {user  && todaysDate >= article.dateFinEncheres ? 
+        user?.id === article.enchere.id ?(<h2>Vouz avez remporté la vente</h2>):(<h2>{article.enchere.acheteur} à remporté la vente</h2>)
+        :(<h2>Détails de la vente</h2>)}
+      <h3>{article.nomArticle}</h3>
       <p>Déscription: {article.description}</p>
       <p>Catégorie: {article.articleCategorie}</p>
       <p>Meilleure offre: {meilleureOffre} </p>
       <p>Mise à prix: {article.prixInitial} points</p>
       <p>Date de fin: {article.dateFinEncheres}</p>
-      <p>Adresse de retrait: {article.retrait.ville}</p>
+      <p>Adresse de retrait: {article.retrait.ville} {article.retrait.codePostal}</p>
       <p>Vendu par: {article.vendeur.pseudo}</p>
       
       {user &&<>
