@@ -1,7 +1,7 @@
 import axios from "axios";
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { AUTH_TOKEN_KEY } from "../../App";
+//import { AUTH_TOKEN_KEY } from "../../App";
 import { useNavigate } from "react-router-dom";
 import '../register/register.css'
 

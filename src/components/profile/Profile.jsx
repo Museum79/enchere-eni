@@ -46,29 +46,29 @@ const Profile = () => {
           <li>
             <strong>Prénom:</strong> <span>{prenom}</span>
           </li>
-          {!id && 
-          <>
           <li>
-              <strong>Email:</strong> <span>{email}</span>
+            <strong>Email:</strong> <span>{email}</span>
           </li>
-           <li>
-              <strong>Téléphone:</strong> <span>{telephone}</span>
-          </li> </> }
-         
-
+          <li>
+            <strong>Téléphone:</strong> <span>{telephone}</span>
+          </li>
           <li>
             <strong>Adresse:</strong>{" "}
             <span>
-            {!id ? `${adresse.rue } ${adresse.codePostal } ${adresse.ville }`:`${adresse.codePostal } ${adresse.ville }`}
+              {adresse.numero} {adresse.rue}, {adresse.codePostal} {adresse.ville}
             </span>
           </li>
         </ul>
         {!id && <div className="button-container">
-          <Link to={`/editprofile`} className="button">
+          <Link to={`/editprofile`} className="btnProfil">
             Modifier le profil
           </Link>
         </div>}
-        
+        <div className='button-container'>
+        <Link to={'/home'} className="btnProfil">
+          Retour
+        </Link>
+        </div>
       </div>
 
     </div>

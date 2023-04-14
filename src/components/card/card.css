@@ -1,11 +1,12 @@
 .cardarticle-container {
   display: flex;
-  margin-left: 1%;
   flex-wrap: wrap;
+  margin-left: 2.8%;
 }
 
 .cardarticle {
-  width: 300px;
+  width: 400px;
+  height: 200px;
   margin-top: 20%;
   margin-left: 5%;
   margin-bottom: 30px;

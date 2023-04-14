@@ -6,18 +6,16 @@ import axios from 'axios';
 
 const Header = () => {
 
+
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState();
-
-  
-
 
 
   useEffect(() => {
     const token = sessionStorage.getItem(AUTH_TOKEN_KEY);
     setIsAuthenticated(token ? true : false);
   }, []);
+
 
   const handleLogout = () => {
     sessionStorage.removeItem(AUTH_TOKEN_KEY);
@@ -26,14 +24,16 @@ const Header = () => {
     navigate('/home', { replace: true });
   };
 
+
   return (
+
     <div className="header-container">
       <Link className='title' to='/home'>
           <img src='./logoENIEncheres.png' alt='ENI - Enchères' onClick={() => window.location.reload()} />
       </Link>
       {!isAuthenticated && <Link className='login' to="/login">Se connecter</Link>}
       {!isAuthenticated && <Link className='register' to="/register">S'inscrire</Link>}
-      
+
       {isAuthenticated  ? (
         <>
           <Link className='deconnexion' onClick={handleLogout} to="/home">Déconnexion</Link>

@@ -11,8 +11,6 @@ const DisplayArticle = () => {
   const [user,setUser] = useState();
   const articleId = parseInt(id);
   const [bid,setBid]  = useState(false);
-  const [finEnchere,setFinEnchere]  = useState(false);
-
   const [montant,setMontant]  = useState(0);
 
 
@@ -51,20 +49,6 @@ const DisplayArticle = () => {
 const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.montantEnchere } points par
  ${article?.enchere.acheteur }`  : `Pas d'offre`;
 
- const date = new Date();
- const todaysDate = date.toISOString().slice(0, 10);
- const dateFin = ()=> {
- if (todaysDate >=  article.dateDebutEncheres  && todaysDate < article.dateFinEncheres){
-  return true;
-
- }else if  (todaysDate < article.dateDebutEncheres || todaysDate > article.dateFinEncheres) {
-  return false
- }
- }
- console.log(user?.id)
-  //console.log(article.vendeur.id)
-// console.log(article.enchere.id)
-
 
   return (
     <div className='formDisplayContainer'>
@@ -83,9 +67,9 @@ const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.mon
       
       {user && todaysDate >= article.dateFinEncheres ?
       user?.id === article.enchere.id ? `Téléphone : ${article.vendeur.telephone}` :
-      user?.id === article.vendeur.id ? <button>Retrait éfféctué</button> : null 
+      user?.id === article.vendeur.id ? <button>Retrait éfféctué</button> : null
       :
-      user ? 
+      user ?
 
        <>
        <button className='btnDisplayEnchere' type="button" onClick={() => setMontant(montant + 1)} disabled={!bid || !limitCredit || !dateFin() }>
@@ -100,7 +84,7 @@ const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.mon
           {!limitCredit && <p>tu peux pas faire d offre</p>}
       </>
       : null
-      
+
         }
 
     </div>

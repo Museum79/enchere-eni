@@ -5,7 +5,6 @@ import Register from './components/register/Register';
 import Home from './components/home/Home';
 import EncheresForm from './components/encheresForm/EncheresForm';
 import Profile from './components/profile/Profile';
-
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import EditProfile from './components/editprofile/EditProfile';
@@ -18,12 +17,8 @@ export const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 
 function App() {
 
+  const { user, setUser} = useContext(UserContext);
   const {categories, setCategories} = useContext(UserContext);
-  const {articles, setArticles} = useContext(UserContext);
-
-
-  
-
 
   useEffect(()=> {
     axios.get("http://localhost:8888/categories/all").then((response)=> {
@@ -31,14 +26,11 @@ function App() {
     })
 },[])
 
-useEffect(()=> {
-  axios.get("http://localhost:8888/articles/all").then((response)=> {
-      setArticles(response.data)
-  })
-},[])
-
-
-
+  useEffect(()=> {
+    axios.get("http://localhost:8888/users/userDetails").then((response)=> {
+      setUser(response.data)
+    })
+  },[])
 
   useEffect(() => {
     console.log('Intercepteur ajouté');

@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import { AUTH_TOKEN_KEY } from '../../App';
 import './card.css';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+
 
 const Card = ({article}) => {
+
     const [isConnected, setIsConnected] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -21,7 +24,7 @@ const Card = ({article}) => {
     };
 
 
-    const actualPrice = article.enchere.montantEnchere ? article.enchere.montantEnchere : article.prixInitial
+    const actualPrice = article.enchere.montantEnchere ? article.encheres.montantEnchere : article.prixInitial
     
   return (
     <>

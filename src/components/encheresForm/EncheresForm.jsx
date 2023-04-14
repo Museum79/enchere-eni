@@ -2,12 +2,13 @@ import React, { useState, useContext } from 'react';
 import '../encheresForm/encheresForm.css';
 import axios from "axios";
 import { UserContext } from '../context/Contexts';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const EncheresForm = () => {
-  const { categories} = useContext(UserContext);
-  console.log(categories)
 
+
+  const { categories } = useContext(UserContext);
 
   const [nomArticle, setNomArticle] = useState('');
   const [description, setDescription] = useState('');
@@ -15,6 +16,8 @@ const EncheresForm = () => {
   const [dateDebutEncheres, setDebutEncheres] = useState('');
   const [dateFinEncheres, setDateFinEncheres] = useState('');
   const [prixInitial, setPrixInitial] = useState(0);
+
+  const navigate = useNavigate();
 
 
   const handleSubmit = async (event) => {
@@ -34,16 +37,16 @@ const EncheresForm = () => {
         'http://localhost:8888/articles/add',
         data
       );
-      
-      console.log(response.data);
+      navigate('/home', { replace: true });
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
+
     <div className="form-container">
-      <h2>Nouvelle vente</h2>
+      <h2 className='titreEnchereForm'>Nouvelle vente</h2>
       <form className='formEnchere' onSubmit={handleSubmit}>
         <div className="form-row">
           <label className='labelEnchereForm' htmlFor="article">Article :</label>
@@ -86,12 +89,14 @@ const EncheresForm = () => {
 
         <div className="form-row">
           <label className='labelEnchereForm' htmlFor="price">Mise à prix :</label>
-          <button type="button" onClick={() => setPrixInitial(prixInitial - 1)}>
-            -
-          </button>
-          <input type="number" id="price" value={prixInitial} readOnly />
-          <button type="button" onClick={() => setPrixInitial(prixInitial + 1)}>
+          <button type='button' className="btnPrice" onClick={() => setPrixInitial(prixInitial + 1)}>
             +
+          </button>
+
+          <input type="number" id="price" min={1} value={prixInitial} />
+
+          <button type='button' className="btnPrice" onClick={() => setPrixInitial(Math.max(prixInitial - 1, 0))}>
+            -
           </button>
         </div>
 
@@ -99,7 +104,7 @@ const EncheresForm = () => {
           <label className='labelEnchereForm' htmlFor="startDate">Début de l'enchère :</label>
           <input
             type="date"
-            id="startDate"
+            className="DateEnchereForm"
             value={dateDebutEncheres}
             onChange={(event) => setDebutEncheres(event.target.value)}/>
         </div>
@@ -108,16 +113,15 @@ const EncheresForm = () => {
           <label className='labelEnchereForm' htmlFor="endDate">Fin de l'enchère :</label>
           <input
             type="date"
-            id="endDate"
+            className="DateEnchereForm"
             value={dateFinEncheres}
             onChange={(event) => setDateFinEncheres(event.target.value)}/>
         </div>
 
-        {/* TODO afficher l'adresse */}
-
-       
-          <button className='btnEncheresForm' type="submit">Enregistrer</button>
-          <button className='btnEncheresForm' type="submit">Annuler</button>
+        <div className='BtnEnchereDiv'>
+            <Link className='btnEncheresForm' type="submit">Enregistrer</Link>
+            <Link className='btnEncheresForm' type="submit" to="/home" >Annuler</Link>
+        </div>
       </form>
     </div>
   );

@@ -1,20 +1,26 @@
 /* Style pour le conteneur principal */
 .profile-container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  margin: 0;
+  background-image: url(../../pictures/image.png);
+  background-size: cover;
+  background-position: center;
 }
 
 /* Style pour la carte */
 .cardprofile {
-  background-color: #fff;
-  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255, 0.4);
+   backdrop-filter: blur(5px);
+  border-radius: 30px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   padding: 2rem;
-  width: 80%;
-  max-width: 600px;
+  width: 50%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,43 +29,46 @@
 
 /* Style pour le titre */
 .cardprofile h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 /* Style pour la liste d'informations */
 .cardprofile ul {
+  font-size: 1.8rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 15px;
+  padding: 10px;
 }
 
 /* Style pour chaque élément de la liste */
 .cardprofile li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 /* Style pour l'élément fort de la liste */
 .cardprofile li strong {
+  
   font-weight: bold;
 }
 
 /* Style pour le texte de la liste */
 .cardprofile li span {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 /* Style pour le conteneur du bouton */
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 0.3rem;
 }
 
 /* Style pour le bouton */
-.button {
-  background-color: blue;
+.btnProfil {
+  width: 200px;
+  background-color: #233975;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -67,8 +76,13 @@
   display: inline-block;
   font-weight: bold;
   cursor: pointer;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.5;
 }
 
-.button:hover {
-  background-color: darkblue;
+.btnProfil:hover {
+  background-color: white ;
+  color: #233975;
+  text-decoration: none;
 }

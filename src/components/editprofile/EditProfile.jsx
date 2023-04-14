@@ -6,7 +6,8 @@ import { useForm } from 'react-hook-form';
 import { AUTH_TOKEN_KEY } from '../../App';
 
 const EditProfile = () => {
-  const { user } = useContext(UserContext);  
+  const { user } = useContext(UserContext);
+  
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   //const [formData, setFormData] = useState({});
   const navigate = useNavigate();
@@ -47,7 +48,11 @@ const EditProfile = () => {
       })
       navigate('/login',{replace:true});
       };
+
+
       const disabled = !user.administrateur? true: false;
+
+      
       return (
       <div>
         <h1>Modifier mon profile</h1>

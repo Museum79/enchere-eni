@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AUTH_TOKEN_KEY } from "../../App";
 import '../login/login.css';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = ({ isAuthenticates }) => {
 
@@ -16,6 +18,8 @@ const Login = ({ isAuthenticates }) => {
     return response;
   });
 
+  const welcome = () => toast.success("Bienvenue !");
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -25,8 +29,9 @@ const Login = ({ isAuthenticates }) => {
       if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') { 
         const jwt = bearerToken.slice(7, bearerToken.length);
         sessionStorage.setItem(AUTH_TOKEN_KEY, jwt);
-        navigate('/home', { replace: true });
       }
+      navigate('/home', { replace: true });
+      welcome();
     } catch(error){
       setErrorMessage("Erreur d'authentification.");
       console.log(error);
@@ -36,8 +41,7 @@ const Login = ({ isAuthenticates }) => {
 
   return (
     <div>
-      <form  onSubmit={handleSubmit}>
-
+      <form  onSubmit={handleSubmit} >
       <div className="split-screen">
         <div className="left">
             <section className="copy">
@@ -47,12 +51,12 @@ const Login = ({ isAuthenticates }) => {
             </section>
         </div>
         <div className="right">
-            <form className='formLogin'>
+            <div className='formLogin'>
                 <section className="copy">
                     <h2>Connexion</h2>
                     <Link className="login-container" to="/register">
                         <p>Pas inscrit?
-                          <strong>Inscription</strong>
+                          <strong> Inscription</strong>
                         </p>
                     </Link>
                 </section>
@@ -73,16 +77,16 @@ const Login = ({ isAuthenticates }) => {
                 </div>
                 <button onClick={handleSubmit} className="signup-btn" type="submit">Entrer
                 </button>
-                {errorMessage && <p>{errorMessage}</p>}
+                {errorMessage && <p style={{fontSize: '1.2rem', color: 'red', fontWeight: 'bold'}}>{errorMessage}</p>}
                 <section className="copy legal">
                     <p><span className="small">En continuant, vous
                         acceptez nos <br/><a href="#">Politique de confidentialité</a> &amp; <a href="#">conditions d'utilisation.</a>.</span></p>
                 </section>
-            </form>
+            </div>
+          </div>
         </div>
-    </div>
-
       </form>
+      <ToastContainer/>
     </div>
   );
 };
