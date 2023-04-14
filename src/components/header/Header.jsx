@@ -23,7 +23,9 @@ const Header = () => {
 
   return (
     <div className="header-container">
-      <Link className='title' to='/home'><h1>ENI - Enchères</h1></Link>
+      <Link className='title' to='/home'>
+          <img src='./logoENIEncheres.png' alt='ENI - Enchères' onClick={() => window.location.reload()} />
+      </Link>
       {!isAuthenticated && <Link className='login' to="/login">Se connecter</Link>}
       {!isAuthenticated && <Link className='register' to="/register">S'inscrire</Link>}
       
@@ -32,6 +34,8 @@ const Header = () => {
           <Link className='deconnexion' onClick={handleLogout} to="/home">Déconnexion</Link>
           <Link className='encheresForm' to="/encheresForm">Vendre un article</Link>
           <Link className='encheresForm' to="/profile">Mon profil</Link>
+          <Link className='encheresForm' to="/categories">Gestion des categories</Link>
+
 
         </>
       ) : null}

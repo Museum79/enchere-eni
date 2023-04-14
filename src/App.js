@@ -11,6 +11,7 @@ import axios from 'axios';
 import EditProfile from './components/editprofile/EditProfile';
 import { UserContext } from './components/context/Contexts';
 import DisplayArticle from './components/displayarticle/DisplayArticle';
+import Catgories from './components/categories/Catgories';
 
 export const AUTH_TOKEN_KEY = 'jhi-authenticationToken';
 
@@ -85,6 +86,8 @@ useEffect(()=> {
         <Route exact path="/profile/:id" element={<Profile/>}/>
         <Route exact path="/editprofile" element={<EditProfile/>}/>
         <Route exact path="/displayarticle/:id" element={<DisplayArticle/>}/>
+        <Route exact path="/categories" element={<Catgories/>}/>
+
 
 
 

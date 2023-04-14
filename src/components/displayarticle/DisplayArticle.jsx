@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/Contexts';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import './displayArticle.css';
+
 
 const DisplayArticle = () => {
   const { id } = useParams();
@@ -65,31 +67,46 @@ const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.mon
 
 
   return (
-    <div>
+    <div className='formDisplayContainer'>
       <div>
         {user  && todaysDate >= article.dateFinEncheres ? 
         user?.id === article.enchere.id ?(<h2>Vouz avez remporté la vente</h2>):(<h2>{article.enchere.acheteur} à remporté la vente</h2>)
         :(<h2>Détails de la vente</h2>)}
-      <h3>{article.nomArticle}</h3>
-      <p>Déscription: {article.description}</p>
-      <p>Catégorie: {article.articleCategorie}</p>
-      <p>Meilleure offre: {meilleureOffre} </p>
-      <p>Mise à prix: {article.prixInitial} points</p>
-      <p>Date de fin: {article.dateFinEncheres}</p>
-      <p>Adresse de retrait: {article.retrait.ville} {article.retrait.codePostal}</p>
-      <p>Vendu par: {article.vendeur.pseudo}</p>
+       <h2 className='formeDisplayTitle'>{article.nomArticle}</h2>
+      <p className='formDisplayP'>Déscription: {article.description}</p>
+      <p className='formDisplayP'>Catégorie: {article.articleCategorie}</p>
+      <p className='formDisplayP'>Meilleure offre: {meilleureOffre} </p>
+      <p className='formDisplayP'>Mise à prix: {article.prixInitial} points</p>
+      <p className='formDisplayP'>Date de fin: {article.dateFinEncheres}</p>
+      <p className='formDisplayP'>Adresse de retrait: {article.retrait.ville}</p>
+      <p className='formDisplayP'>Vendu par: {article.vendeur.pseudo}</p>
       
-      {user &&<>
-        <input type="number" id="price" value={montant} readOnly disabled={!bid }/>
-          <button type="button" onClick={() => setMontant(montant + 1)} disabled={!bid || !limitCredit || !dateFin()}>
+      {user && todaysDate >= article.dateFinEncheres ?
+      user?.id === article.enchere.id ? `Téléphone : ${article.vendeur.telephone}` :
+      user?.id === article.vendeur.id ? <button>Retrait éfféctué</button> : null 
+      :
+      user ? 
+
+       <>
+       <button className='btnDisplayEnchere' type="button" onClick={() => setMontant(montant + 1)} disabled={!bid || !limitCredit || !dateFin() }>
             +
           </button>
-          <button onClick={handleSubmit} disabled={!bid || !limitCredit || !dateFin()}>Enchérir</button>
-          {!limitCredit && <p>tu n'as pas assez d'argent</p>}
+        <input className='formDisplayInput' type="number" id="price" value={montant} readOnly disabled={!bid }/>
+          <button className='btnDisplayEnchere' type="button" onClick={() => setMontant(montant - 1)} disabled={!bid || !limitCredit || !dateFin()}>
+            -
+          </button>
+          <br></br>
+          <bouton  className='formDisplaySubmit' onClick={handleSubmit} disabled={!bid || !limitCredit || !dateFin()}>Enchérir</bouton>
+          {!limitCredit && <p>tu peux pas faire d offre</p>}
       </>
+      : null
       
         }
+
     </div>
+    <duv>
+    <Link to='/home'>Retour à l'acceuil</Link>
+    </duv>
     </div>
   )
 }
