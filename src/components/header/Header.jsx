@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AUTH_TOKEN_KEY } from "../../App";
 import '../header/header.css';
+import axios from 'axios';
 
 const Header = () => {
 
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState();
+
+  
+
 
 
   useEffect(() => {
@@ -29,7 +34,7 @@ const Header = () => {
       {!isAuthenticated && <Link className='login' to="/login">Se connecter</Link>}
       {!isAuthenticated && <Link className='register' to="/register">S'inscrire</Link>}
       
-      {isAuthenticated ? (
+      {isAuthenticated  ? (
         <>
           <Link className='deconnexion' onClick={handleLogout} to="/home">Déconnexion</Link>
           <Link className='encheresForm' to="/encheresForm">Vendre un article</Link>

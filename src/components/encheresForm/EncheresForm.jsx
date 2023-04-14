@@ -34,6 +34,7 @@ const EncheresForm = () => {
         'http://localhost:8888/articles/add',
         data
       );
+      
       console.log(response.data);
     } catch (error) {
       console.error(error);

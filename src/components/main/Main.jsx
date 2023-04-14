@@ -18,11 +18,6 @@ const Main = () => {
     const [showMesAchatOuvertes, setShowMesAchatsOuverts] = useState(false);
     const [showMesAchatRemportee, setShowMesAchatRemportee] = useState(false);
 
-    
-    
-    //const [showMesVentes, setShowMesVentes] = useState(false);
-
-    
     const date = new Date();
     const todaysDate = date.toISOString().slice(0, 10); 
 
