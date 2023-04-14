@@ -48,6 +48,15 @@ const DisplayArticle = () => {
 
 const meilleureOffre = article?.enchere.montantEnchere ? `${article?.enchere.montantEnchere } points par
  ${article?.enchere.acheteur }`  : `Pas d'offre`;
+ const date = new Date();
+ const todaysDate = date.toISOString().slice(0, 10);
+ const dateFin = ()=> { if (todaysDate >= article.dateDebutEncheres && todaysDate < article.dateFinEncheres)
+  { return true;
+   }
+  else if (todaysDate < article.dateDebutEncheres || todaysDate > article.dateFinEncheres) 
+  { return false
+   } 
+}
 
 
   return (

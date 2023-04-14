@@ -19,11 +19,18 @@ function App() {
 
   const { user, setUser} = useContext(UserContext);
   const {categories, setCategories} = useContext(UserContext);
+  const {articles, setArticles} = useContext(UserContext);
+
 
   useEffect(()=> {
     axios.get("http://localhost:8888/categories/all").then((response)=> {
         setCategories(response.data)
     })
+},[])
+useEffect(()=> {
+  axios.get("http://localhost:8888/articles/all").then((response)=> {
+      setArticles(response.data)
+  })
 },[])
 
   useEffect(()=> {

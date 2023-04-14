@@ -24,7 +24,7 @@ const Card = ({article}) => {
     };
 
 
-    const actualPrice = article.enchere.montantEnchere ? article.encheres.montantEnchere : article.prixInitial
+    const actualPrice = article?.enchere?.montantEnchere ? article?.encheres?.montantEnchere : article?.prixInitial
     
   return (
     <>
@@ -37,13 +37,13 @@ const Card = ({article}) => {
             <h3 className="cardarticle-title"><Link to={`/displayarticle/${article.id}`}>{article.nomArticle}</Link> </h3>
             <div className="cardarticle-details">
               <p className="cardarticle-price">Prix : {actualPrice} points</p>
-              <p className="cardarticle-date">Fin de l'enchère: {article.dateDebutEncheres}</p>
-              <p className="cardarticle-vendeur">{isConnected ?(<Link to={`/profile/${article.vendeur.id}`}>Vendeur: {article.vendeur.pseudo}</Link>):(`Vendeur: ${article.vendeur.pseudo}`)} </p>
+              <p className="cardarticle-date">Fin de l'enchère: {article?.dateDebutEncheres}</p>
+              <p className="cardarticle-vendeur">{isConnected ?(<Link to={`/profile/${article?.vendeur?.id}`}>Vendeur: {article?.vendeur?.pseudo}</Link>):(`Vendeur: ${article.vendeur.pseudo}`)} </p>
             </div>
           </div>
         </div>
       </div>
-      {modalIsOpen && (
+      {/*modalIsOpen && (
         <div className="modalEnchere">
           <div className="modalEnchere-content">
             <h2>{article.nomArticle}</h2>
@@ -55,7 +55,7 @@ const Card = ({article}) => {
             <button className='btnModal' onClick={handleCloseModal}>Fermer</button>
           </div>
         </div>
-      )}
+      )*/}
     </>
   )
 }
